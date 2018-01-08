@@ -1,0 +1,42 @@
+page-about {
+    .swiper-container {
+        width: 100%;
+        height: 150px;
+        // 实现上下红白色各半
+        background: linear-gradient(to bottom, color($colors, primary) 50%, color($colors, light) 50%)
+    }
+    .swiper-wrapper {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+    }
+    // 非激活的图片缩小为0.9倍
+    .swiper-slide img {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        height: 100%;
+        border: 2px solid #ffffff;
+        position: relative;
+        transition: all .3s;
+        transform: scale(0.9);
+        -webkit-backface-visibility: hidden;
+    }
+    // 激活的图片恢复为原来的大小
+    .swiper-slide-active img {
+        transform: scale(1);
+        opacity: 1;
+    }
+    .swiper-slide .slide-zoom {
+        height: 100%;
+        padding: 10px 10px 0;
+        box-sizing: border-box;
+    }
+}
+ion-app.ios [padding] .scroll-content {
+	padding: 0 !important;
+}

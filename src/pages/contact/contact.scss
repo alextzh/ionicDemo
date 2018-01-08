@@ -1,0 +1,11 @@
+page-contact {
+    .toolbar-ios .segment-button {
+        max-width: 120px;
+    }
+    .swiper-slide {
+        align-items: normal !important;
+        .slide-zoom {
+            overflow-y: auto;
+        }
+    }
+}
