@@ -64,6 +64,7 @@ export class ChatPage {
 
   scrollToBottom() {
     if (this.content) {
+      this.content.resize()
       this.content.scrollToBottom()
     }
   }
@@ -74,7 +75,6 @@ export class ChatPage {
 
   onFocus() {
     this.showEmojiPicker = false
-    this.content.resize()
     this.scrollToBottom()
   }
   switchEmojiPicker() {
@@ -82,7 +82,6 @@ export class ChatPage {
     if (!this.showEmojiPicker) {
       this.messageInput.setFocus()
     }
-    this.content.resize()
     this.scrollToBottom()
   }
 
@@ -107,16 +106,18 @@ export class ChatPage {
       return false
     }
     const id = Date.now().toString()
-    newMsg = {
-      messageId: Date.now().toString(),
-      userId: this.user.id,
-      userName: this.user.name,
-      userAvatar: this.user.avatar,
-      toUserId: this.toUser.id,
-      time: Date.now(),
-      message: this.editorMsg.trim(),
-      status: 'pending',
-      photo: ''
+    if (!newMsg) {
+      newMsg = {
+        messageId: Date.now().toString(),
+        userId: this.user.id,
+        userName: this.user.name,
+        userAvatar: this.user.avatar,
+        toUserId: this.toUser.id,
+        time: Date.now(),
+        message: this.editorMsg.trim(),
+        status: 'pending',
+        photo: ''
+      }
     }
     this.pushNewMsg(newMsg)
 
@@ -157,7 +158,7 @@ export class ChatPage {
         })
       }
     }, error => {
-
+      this.utilProvider.warning('发送图片失败')
     })
   }
 
