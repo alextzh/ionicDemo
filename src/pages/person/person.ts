@@ -1,6 +1,7 @@
 import { SettingPage } from './setting/setting';
 import { Component } from '@angular/core';
 import { NavController, IonicPage } from 'ionic-angular';
+import { GetImagePage } from './get-image/get-image';
 
 @IonicPage()
 @Component({
@@ -19,10 +20,12 @@ export class PersonPage {
   vm: any = {
     msgNum: 0
   }
-  pushPage: any
+  pushSettingPage: any
+  pushImagePage: any
 
   constructor(public navCtrl: NavController) {
-    this.pushPage = SettingPage
+    this.pushSettingPage = SettingPage
+    this.pushImagePage = GetImagePage
   }
 
   ionViewDidLoad() {

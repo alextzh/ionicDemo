@@ -54,12 +54,12 @@
       <ion-icon name="people" color="light-blue"></ion-icon>
       Invite friends
     </button>
-    <button ion-item>
+    <button ion-item [navPush]="pushImagePage">
       <ion-icon name="mail" color="light-yellow"></ion-icon>
       System message
       <ion-badge *ngIf="vm && vm.msgNum > 0" item-right color="danger">{{vm.msgNum}}</ion-badge>
     </button>
-    <button ion-item [navPush]="pushPage">
+    <button ion-item [navPush]="pushSettingPage">
       <ion-icon name="settings" color="light-green"></ion-icon>
       Setting
     </button>

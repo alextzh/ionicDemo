@@ -12,6 +12,7 @@ import { ChatPage } from './../pages/contact/chat/chat';
 import { PersonPage } from './../pages/person/person';
 import { ContactPage } from './../pages/contact/contact';
 import { AboutPage } from './../pages/about/about';
+import { GetImagePage } from '../pages/person/get-image/get-image';
 
 // native
 import { StatusBar } from '@ionic-native/status-bar';
@@ -34,6 +35,7 @@ import { UtilProvider } from '../providers/common/util';
 import { WechatProvider } from '../providers/common/wechat';
 import { EmojiProvider } from '../providers/common/emoji';
 import { FileProvider } from '../providers/common/file';
+import { CameraProvider } from '../providers/camera/camera';
 
 // pipes
 import { RelativeTimePipe } from '../pipes/relative-time/relative-time';
@@ -53,6 +55,7 @@ import { VgBufferingModule } from 'videogular2/buffering';
 
 
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -63,6 +66,7 @@ import { VgBufferingModule } from 'videogular2/buffering';
     ChatPage,
     PersonPage,
     SettingPage,
+    GetImagePage,
     RelativeTimePipe,
     FirstFramePipe,
     BackgroundPipe,
@@ -96,6 +100,7 @@ import { VgBufferingModule } from 'videogular2/buffering';
     ChatPage,
     PersonPage,
     SettingPage,
+    GetImagePage,
     EmojiPickerComponent,
     PopupMenuComponent
   ],
@@ -114,7 +119,8 @@ import { VgBufferingModule } from 'videogular2/buffering';
     ChatProvider,
     WechatProvider,
     EmojiProvider,
-    FileProvider
+    FileProvider,
+    CameraProvider
   ]
 })
 export class AppModule {}
