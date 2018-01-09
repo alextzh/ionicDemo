@@ -32,7 +32,7 @@ export class AboutPage {
    * 获取甜点轮播图片
   */
   getDessertSlides() {
-    const url = '../../assets/data/dessert-slides.json'
+    const url = 'assets/data/dessert-slides.json'
     this.httpProvider.get(url, false)
       .subscribe(data => {
         console.log(data)
@@ -50,7 +50,7 @@ export class AboutPage {
    * 获取甜点列表
   */
   getDessertList() {
-    const url = '../../assets/data/dessert-list.json'
+    const url = 'assets/data/dessert-list.json'
     this.httpProvider.get(url, false)
       .subscribe(data => {
         console.log(data)

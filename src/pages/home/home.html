@@ -10,7 +10,7 @@
       <!-- 发布人信息 -->
       <ion-item>
         <ion-avatar item-start>
-          <img data-src="{{item.headImg}}" alt="">
+          <img data-src="{{item.headImg}}" onerror="assets/imgs/girl.jpg">
         </ion-avatar>
         <h2><strong><span color="dark">{{item.name}}</span></strong></h2>
         <ion-note item-right>{{item.createTime}}</ion-note>
@@ -30,7 +30,7 @@
           <vg-volume></vg-volume>
           <vg-fullscreen></vg-fullscreen>
         </vg-controls>
-        <video #myMedia [vgMedia]="myMedia" class="vedio-js vjs-default-skin vjs-fluid" height="400" width="600" preload="auto" poster="{{item.cover}}"
+        <video #myMedia [vgMedia]="myMedia" class="vedio-js vjs-default-skin vjs-fluid vjs-poster" height="400" preload="auto" poster="{{item.cover}}"
         crossorigin playsinline webkit-playsinline>
           <source *ngFor="let cItem of item.medias" src="{{cItem.src}}" type="video/mp4">
         </video>

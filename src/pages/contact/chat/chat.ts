@@ -1,7 +1,6 @@
-import { HttpProvider } from './../../../providers/common/http';
+import { HttpProvider } from '../../../providers/common/http';
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavParams } from 'ionic-angular';
-import { Events, Content, TextInput } from 'ionic-angular';
+import { NavParams, Events, Content, TextInput } from 'ionic-angular';
 import { ChatProvider, ChatMessage, UserInfo } from '../../../providers/chat/chat';
 import { UtilProvider } from '../../../providers/common/util';
 import { FileProvider } from '../../../providers/common/file';
@@ -13,7 +12,6 @@ import { FileProvider } from '../../../providers/common/file';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-chat',
   templateUrl: 'chat.html',
@@ -101,7 +99,7 @@ export class ChatPage {
    * sendMsg
   */
   sendMsg(newMsg?: ChatMessage) {
-    if (!this.editorMsg) {
+    if (!this.editorMsg.trim()) {
       this.utilProvider.warning('聊天内容不能为空')
       return false
     }
@@ -114,7 +112,7 @@ export class ChatPage {
         userAvatar: this.user.avatar,
         toUserId: this.toUser.id,
         time: Date.now(),
-        message: this.editorMsg.trim(),
+        message: this.editorMsg,
         status: 'pending',
         photo: ''
       }

@@ -1,14 +1,15 @@
 import { HttpProvider } from './../../providers/common/http';
-import { Component, ChangeDetectorRef } from '@angular/core';
-import { NavController, IonicPage } from 'ionic-angular';
+import { Component, ChangeDetectorRef, ViewChildren } from '@angular/core';
+import { NavController } from 'ionic-angular';
 import Swiper from 'swiper';
 
-@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+
+  @ViewChildren('myMedia') mediaSource: any
 
   friendNews: string[]
   constructor(public navCtrl: NavController, private cd: ChangeDetectorRef, private httpProvider: HttpProvider) {
@@ -20,7 +21,7 @@ export class HomePage {
 
   // 获取数据
   getFriendNews() {
-    const url = '../../assets/data/friend-news.json'
+    const url = 'assets/data/friend-news.json'
     this.httpProvider.get(url, false)
       .subscribe(data => {
         if (!data['success']) {
