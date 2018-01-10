@@ -50,14 +50,21 @@
   </ion-item-group>
   <ion-item-group>
     <ion-item-divider color="light">System</ion-item-divider>
-    <button ion-item (click)="onInvite()">
-      <ion-icon name="people" color="light-blue"></ion-icon>
-      Invite friends
+    <button ion-item [navPush]="pushGoogleMapsPage">
+        <ion-icon name="map" color="light-blue"></ion-icon>
+        Google Maps
+      </button>
+    <button ion-item [navPush]="pushBarcodePage">
+      <ion-icon name="qr-scanner" color="light-blue"></ion-icon>
+      Barcode Scanner
+    </button>
+    <button ion-item [navPush]="pushCardPage">
+      <ion-icon name="card" color="light-yellow"></ion-icon>
+      Credit Card Scan
     </button>
     <button ion-item [navPush]="pushImagePage">
-      <ion-icon name="mail" color="light-yellow"></ion-icon>
-      System message
-      <ion-badge *ngIf="vm && vm.msgNum > 0" item-right color="danger">{{vm.msgNum}}</ion-badge>
+      <ion-icon name="image" color="light-yellow"></ion-icon>
+      Get Image
     </button>
     <button ion-item [navPush]="pushSettingPage">
       <ion-icon name="settings" color="light-green"></ion-icon>

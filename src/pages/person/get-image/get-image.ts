@@ -86,8 +86,8 @@ export class GetImagePage {
     return this.cameraProvider.getPictureFromPhotoLibrary().then(picture => {
       if (picture) {
         this.choosePicture = picture
+        loading.dismiss()
       }
-      loading.dismiss()
     }, error => {
       alert(error)
     })

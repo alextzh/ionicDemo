@@ -13,6 +13,9 @@ import { PersonPage } from './../pages/person/person';
 import { ContactPage } from './../pages/contact/contact';
 import { AboutPage } from './../pages/about/about';
 import { GetImagePage } from '../pages/person/get-image/get-image';
+import { BarcodeScannerPage } from '../pages/person/barcode-scanner/barcode-scanner';
+import { CreditCardScanPage } from '../pages/person/credit-card-scan/credit-card-scan';
+import { NativeGoogleMapsPage } from '../pages/person/native-google-maps/native-google-maps';
 
 // native
 import { StatusBar } from '@ionic-native/status-bar';
@@ -20,6 +23,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
 import { Keyboard } from '@ionic-native/keyboard';
 import { ImagePicker } from '@ionic-native/image-picker';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { CardIO } from '@ionic-native/card-io';
+import { GoogleMaps } from '@ionic-native/google-maps';
+import { Geolocation } from '@ionic-native/geolocation';
 
 // components
 import { EmojiPickerComponent } from '../components/emoji-picker/emoji-picker';
@@ -36,11 +43,14 @@ import { WechatProvider } from '../providers/common/wechat';
 import { EmojiProvider } from '../providers/common/emoji';
 import { FileProvider } from '../providers/common/file';
 import { CameraProvider } from '../providers/camera/camera';
+import { NativeGoogleMapsProvider } from '../providers/native-google-maps/native-google-maps';
 
 // pipes
 import { RelativeTimePipe } from '../pipes/relative-time/relative-time';
 import { FirstFramePipe } from '../pipes/first-frame/first-frame';
 import { BackgroundPipe } from '../pipes/background/background';
+import { CapitalizePipe } from '../pipes/capitalize/capitalize';
+import { ShortenPipe } from '../pipes/shorten/shorten';
 
 // directives
 import { KeyboardAttachDirective } from '../directives/keyboard-attach/keyboard-attach';
@@ -51,7 +61,6 @@ import { VgCoreModule } from 'videogular2/core';
 import { VgControlsModule } from 'videogular2/controls';
 import { VgOverlayPlayModule } from 'videogular2/overlay-play';
 import { VgBufferingModule } from 'videogular2/buffering';
-
 
 
 
@@ -67,9 +76,14 @@ import { VgBufferingModule } from 'videogular2/buffering';
     PersonPage,
     SettingPage,
     GetImagePage,
+    BarcodeScannerPage,
+    CreditCardScanPage,
+    NativeGoogleMapsPage,
     RelativeTimePipe,
     FirstFramePipe,
     BackgroundPipe,
+    CapitalizePipe,
+    ShortenPipe,
     KeyboardAttachDirective,
     MyModeDirective,
     EmojiPickerComponent,
@@ -101,6 +115,9 @@ import { VgBufferingModule } from 'videogular2/buffering';
     PersonPage,
     SettingPage,
     GetImagePage,
+    BarcodeScannerPage,
+    CreditCardScanPage,
+    NativeGoogleMapsPage,
     EmojiPickerComponent,
     PopupMenuComponent
   ],
@@ -110,6 +127,10 @@ import { VgBufferingModule } from 'videogular2/buffering';
     Camera,
     Keyboard,
     ImagePicker,
+    BarcodeScanner,
+    CardIO,
+    GoogleMaps,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ConfigProvider,
     HttpProvider,
@@ -120,7 +141,8 @@ import { VgBufferingModule } from 'videogular2/buffering';
     WechatProvider,
     EmojiProvider,
     FileProvider,
-    CameraProvider
+    CameraProvider,
+    NativeGoogleMapsProvider
   ]
 })
 export class AppModule {}
